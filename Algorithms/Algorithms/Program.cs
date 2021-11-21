@@ -10,15 +10,17 @@ namespace Algorithms
 	{
         static void Main(string[] args)
         {
-            int[] halfOne = new int[9] { 1212, 6, 17, 20, 21, 56,292,10, 1111};
-            int[] result = MergeSort(halfOne);
-            
+
+            SolutionOne solOne = new SolutionOne();
+
+            int[][] inputMatrix = new int[][] { new int[4] { 0, 1, 2, 0 }, new int[4] { 3, 4, 5, 2 }, new int[4] { 1, 3, 1, 5 } };
+
+            var result = solOne.SetZeroes(inputMatrix);
+
             foreach (var x in result)
-                Console.WriteLine(x);
+                foreach (var y in x)
+                    Console.WriteLine(y);
 
-            Console.WriteLine(Solution.SingleNumber(new int[5] { 3, 4, 4, 1, 1 }));
-
-            Console.WriteLine(6^2);
         }
 
         public static int[] MergeSort(int[] inputArr)
@@ -130,35 +132,102 @@ namespace Algorithms
     {
         public static IList<IList<int>> ThreeSum(int[] nums)
         {
-            int n = 0;
-            int q = 0;
-
             IList<IList<int>> outputList = new List<IList<int>>();
 
-            while (n < nums.Length - 2)
+            if (nums.Length <= 1)
             {
-                q = n + 1;
+                IList<int> work =
+                  nums.ToList<int>();
+            }
+    
+            Array.Sort(nums);
 
-                for (int i = q; i < nums.Length - 1; i++)
+            int b = 0;
+            int c = 0;
+
+            HashSet<string> hashSet = new HashSet<string>();
+
+            for (int a = 0; a < nums.Length - 2; a++)
+            {
+                while (a > 0 && nums[a] == nums[a - 1] && a < nums.Length - 2)
                 {
-                    for (int j = q + 1; j < nums.Length; j++)
-                    {
-                        if (nums[n] + nums[i] + nums[j] == 0)
-                        {
-                            List<int> addMeList = new List<int>() { nums[n], nums[i], nums[j] };
-                            addMeList.Sort();
+                    a++;
+                }
 
-                            if (!outputList.Contains(addMeList))
-                                outputList.Add(addMeList);
+                b = a + 1;
+                c = nums.Length - 1;
+          
+                while(b < c)
+                {
 
-                            outputList[i].Remove(i);
-                        }
+                    if (nums[a] + nums[b] + nums[c] == 0)
+                    {                      
+                      var addMeList = new List<int> { nums[a], nums[b], nums[c] };
+                      outputList.Add(addMeList);
+                      c = nums.Length - 1;
+                      b++;
+                        while (nums[b] == nums[b - 1] && b < c)
+                            b++;
+                    }
+                    if (nums[a] + nums[b] + nums[c] < 0)
+                        b++;
+
+                    if (nums[a] + nums[b] + nums[c] > 0)
+                    {        
+                        c--;
                     }
                 }
-                n++;
             }
 
             return outputList;
         }
+
+        public static string addToHash(int a, int b, int c)
+        {
+            var formattedString = string.Format(a.ToString() + b.ToString() + c.ToString());
+            Console.WriteLine(formattedString);
+            return formattedString;
+        }
+
     }
+    public class SolutionOne
+    {
+        public int[][] SetZeroes(int[][] matrix)
+        {
+            for (int a = 0; a < matrix.Length; a++)
+                for (int b = 0; b < matrix[a].Length; b++)
+                { 
+                    if (matrix[a][b] == 0)
+                    {
+                        for (int q = 0; q < matrix[a].Length; q++)
+                        {
+                            if (matrix[a][q] != 0)
+                                matrix[a][q] = 0;
+                            else
+                            {
+                                b = q;
+                                break;
+                            }
+                        }
+                        for (int z = 0; z < matrix.Length; z++)
+                            matrix[z][b] = 0;
+
+                        if (b < matrix[a].Length)
+                            b++;
+                        else
+                            break;
+
+                    }
+                }
+
+            for (int a = 0; a < matrix.Length; a++)
+                for (int b = 0; b < matrix[a].Length; b++)
+                {
+                    if (matrix[a][b] == -1)
+                        matrix[a][b] = 0;
+                }
+                    return matrix;
+        }
+    }
+
 }
