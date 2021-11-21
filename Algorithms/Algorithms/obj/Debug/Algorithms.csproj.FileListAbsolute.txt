@@ -1,0 +1,14 @@
+C:/Users/pdnud/source/repos/Algorithms/Algorithms/bin/Debug/Algorithms.exe.config
+C:/Users/pdnud/source/repos/Algorithms/Algorithms/bin/Debug/Algorithms.exe
+C:/Users/pdnud/source/repos/Algorithms/Algorithms/bin/Debug/Algorithms.pdb
+C:/Users/pdnud/source/repos/Algorithms/Algorithms/obj/Debug/Algorithms.csproj.AssemblyReference.cache
+C:/Users/pdnud/source/repos/Algorithms/Algorithms/obj/Debug/Algorithms.csproj.CoreCompileInputs.cache
+C:/Users/pdnud/source/repos/Algorithms/Algorithms/obj/Debug/Algorithms.exe
+C:/Users/pdnud/source/repos/Algorithms/Algorithms/obj/Debug/Algorithms.pdb
+/Users/piercenudd/AlgorithmTesting/Algorithms/Algorithms/bin/Debug/Algorithms.exe.config
+/Users/piercenudd/AlgorithmTesting/Algorithms/Algorithms/bin/Debug/Algorithms.exe
+/Users/piercenudd/AlgorithmTesting/Algorithms/Algorithms/bin/Debug/Algorithms.pdb
+/Users/piercenudd/AlgorithmTesting/Algorithms/Algorithms/obj/Debug/Algorithms.csproj.AssemblyReference.cache
+/Users/piercenudd/AlgorithmTesting/Algorithms/Algorithms/obj/Debug/Algorithms.csproj.CoreCompileInputs.cache
+/Users/piercenudd/AlgorithmTesting/Algorithms/Algorithms/obj/Debug/Algorithms.exe
+/Users/piercenudd/AlgorithmTesting/Algorithms/Algorithms/obj/Debug/Algorithms.pdb
